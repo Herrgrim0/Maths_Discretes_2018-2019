@@ -10,7 +10,6 @@
 
 %Insertion de tout un tas de librairie qui nous seront probablement inutiles pour la pluspart mais it's always good to have them
 \title{\textbf{Maths Discrètes}\\ Solutions TP 3}
-\author{Beltus Marcel}
 \date{}
 \begin{document}
 \maketitle % fais le titre écris plus haut
@@ -31,10 +30,26 @@ s
 \begin{align*}
 &x > 0 \rightarrow x \geq 1 \hspace{0.5cm} &;\hspace{0.5cm}&x' = x-1 \hspace{1cm}\text{ou} \hspace{0.5cm}&x = x'+1 \\
 &y \geq 9 &; \hspace{0.5cm}&y' = y-9 & y = y'+9\\
-&z>-1 \rightarrow z\geq -1&; \hspace{0.5cm}&z' = z+1 & z = z'-1\\
+&z>-2 \rightarrow z\geq -1&; \hspace{0.5cm}&z' = z+1 & z = z'-1\\
 &t \geq 0 &; \hspace{0.5cm}&t' = t & t = t'\\
-&y > 10 \rightarrow u \geq 11 &; \hspace{0.5cm}&u' = u-11 & u = u' +11
+&u > 10 \rightarrow u \geq 11 &; \hspace{0.5cm}&u' = u-11 & u = u' +11
 \end{align*}
+\begin{align*}
+x+y+z+t+u &= 60\\
+(x'+1)+(y'+9)+(z'-1)+t'+(u'+11) &= 60\\
+x'+y'+z'+t'+u' &= 40\\
+\end{align*}
+donc: $s = 40, d = 5$\\
+$$\begin{pmatrix}
+s + d -1\\
+s
+\end{pmatrix}
+=
+\begin{pmatrix}
+44\\
+40
+\end{pmatrix}$$
+
 \section*{Exercice 3}
 \begin{enumerate}
 \item $s \leq 6 $ et $s \in \mathbb{N}$ \hspace{0.5cm}, \hspace{0.5cm} d = 4
@@ -57,33 +72,29 @@ n + 3\\
 0+1+3
 \end{pmatrix}\\&&&= \begin{pmatrix} 10 \\ 4\end{pmatrix} = 210
 \end{align*}
-\item$ 0 < s \leq 6$ et $s \in \mathbb{Z}_+$, $d=4$
+\item$ 0 < s \leq 2$ et $s \in \mathbb{Z}$, $d=4$\\
+puisque $x,y,z,t \geq 1$, alors $s \leq 6 - 4(1)$.
 \begin{align*}
-\underset{n=1}{\overset{6}{\sum}}
+\underset{n=0}{\overset{2}{\sum}}
 \begin{pmatrix}
 n+4-1\\
 4-1
-\end{pmatrix} &=\underset{n=1}{\overset{6}{\sum}}
+\end{pmatrix} &=\underset{n=0}{\overset{2}{\sum}}
 \begin{pmatrix}
 n+3\\
 4-1
 \end{pmatrix}\\
-&=\underset{n=0}{\overset{6}{\sum}}
+&=\underset{n=0}{\overset{2}{\sum}}
 \begin{pmatrix}
 n+3\\
 0+3
-\end{pmatrix}
--
-\begin{pmatrix}
-3\\
-3
 \end{pmatrix}\\
 &=
 \begin{pmatrix}
-10\\
+6\\
 4
-\end{pmatrix}-1\\
-&=209 \text{\textcolor{red}{ J'ai pas compris tes annotation}}
+\end{pmatrix}\\
+&=15
 \end{align*}
 
 \item
@@ -139,30 +150,34 @@ $$ \underset{n=0}{\overset{95}{\sum}}
 n+3\\
 3
 \end{pmatrix} = \begin{pmatrix}
-98\\
-3
+99\\
+4
 \end{pmatrix}$$
 
 
 
 \section*{Exercice 6}
-Avec ces 12 lettres nous pouvons composer $\dfrac{12!}{2!2!2!2!3!1!}$\\
-Il y a 13 emplacements pour U (avant, enter, après)\\
-On a 9 U, donc $\begin{pmatrix}
+Sans les U, il y a 12 lettres, avec lesquelles on peut composer $\dfrac{12!}{2!2!2!2!3!1!}$ mots (\textit{voir coefficient multinomial}).\\
+Il y a 13 emplacements pour U dans un mot de 12 lettres pour qu'il n'en ait jamais 2 côte à côte: devant le mot, entre chaque lettre, à la fin du mot.\\
+On a 9 U, soit $\begin{pmatrix}
 13\\
 9
-\end{pmatrix}$ possibilités
+\end{pmatrix}$ possibilités.\\
+On peut donc composer $\dfrac{12!}{2!2!2!2!3!1!} \times \begin{pmatrix}
+13\\
+9
+\end{pmatrix}$ mots.
 
-ou tous les mots - chaque exceptoin (2u,3u,$\dots$cotes à cote). \textcolor{red}{ ça m'a pas l'air très claire.}
+
 \section*{Exercice 7}
 16
 \section*{Exercice 8}
-Contradiction\\
-$\rightarrow$ max$_n$ = identiques \textcolor{red}{ J'ai pt mal lu ça me smeble ambigu}\\  
-$\rightarrow$ max$_n$ = différents\\
-pour chaque elem $\in n$, au plus $n$ élements.
-alors $n^2$ Objetcs
-si $n^2+1$ alors soit $n+1$ éléments soit $n+1$ types d'un type
+[Preuve par contradiction]\\
+Pour $n$ éléments, on a \\
+$\rightarrow$ maximum $n$ éléments identiques\\
+$\rightarrow$ maximum $n$ éléments différents\\
+Pour chaque type d'élément dans $n$, on a au plus $n$ élements, soit $n^2$ objets au total.\\
+Si on a $n^2+1$ objets, alors on doit avoir soit $n+1$ éléments différents soit $n+1$ objets d'un type.
 \section*{Exercice 9}
 \begin{enumerate}
 \item $8^{16}$
@@ -172,55 +187,12 @@ si $n^2+1$ alors soit $n+1$ éléments soit $n+1$ types d'un type
 \item $7^{11}+7^{10}+7^{9}$
 \end{enumerate}
 \section*{Exercice 10}
-Contradiction, Ramsay number $R_{3\cdot3}$
+[Preuve par contradiction]\\
+voir \textit{Ramsey number}: $R_{3\cdot3}$\\
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Soit une 2-coloration (\textit{qu'on peut facilement utiliser représenter comme relations amies/ennemies}) du graphe complet à six sommets $K_6$.
+Chaque sommet de ce graphe possède donc 5 arêtes. D'après le \textit{principe des tiroirs}, au moins 3 d'entre elles sont de la même couleur.\\
+Soient les arêtes $\{v,r\}, \{v,s\}, \{v,t\}$ de la première couleur, pour $v,r,s,t \in K_6$.\\
+Si l'une des arêtes $\{r,s\}, \{t,s\}, \{t,r\}$ est également de la première couleur, alors le triangle correspondant est entièrement de la première couleur, sinon c'est le triangle formé par ces trois dernières arêtes qui est entièrement de la deuxième couleur.
 
 \end{document}
